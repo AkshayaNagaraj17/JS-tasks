@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/To-dostyle.css">
+</head>
+<body>
+    <div class="wrap">
+    <h1>To-Do List</h1>
+    <div class="wrap1">
+    <input type="text" id="inp">
+    <button id="add" onclick="add()">Add task</button>
+    </div>
+    <div class="wrap2">
+    <ol id="Lists">
+        <li id="items">
+            Example task
+            <button onclick="deleteitem(event)"> Completed</button>
+        </li>
+        
+    </ol>
+    </div>
+    </div>
+
+
+    <script>
+
+      var Lists=document.getElementById("Lists")
+      var inp=document.getElementById("inp")
+        function add()
+        {
+            var items=document.createElement("li")
+            items.innerHTML=inp.value + "<button onclick='deleteitem(event)'>   Completed </button>"
+            Lists.append(items)
+        }
+        function deleteitem(event)
+        {
+            event.target.parentElement.remove()
+        }
+    </script>
+
+
+</body>
+</html>
