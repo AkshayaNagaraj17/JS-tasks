@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="hea">Name</h1>
+    <button id="btn1" onclick="update(event)">aksh</button>
+    <button id="btn2"  onclick="update(event)">akshaya</button>
+    <button id="btn3"  onclick="update(event)">akshu</button>
+    <script>
+
+var hea=document.getElementById("hea")
+
+        function update(event)
+        {
+            hea.textContent=event.target.textContent
+            
+        }
+    </script>
+</body>
+</html>
