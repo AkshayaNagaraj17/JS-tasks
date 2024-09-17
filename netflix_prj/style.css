@@ -58,10 +58,41 @@
     width: 20%;
     height:350px;
     border-radius: 15px;
+    overflow: hidden;
+    position: relative;
     
 }
 .ST{
     width: 100%;
     height: 100%;
+    
     border-radius: 15px;;
+}
+.overlay{
+    width:100%;
+    height:100%;
+    background-color: black;
+    opacity: 0;
+    position: absolute;
+    transition: 2s;
+}
+.overlay:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.video{
+    width: 100%;
+    height:50%;
+    /* background-color: aqua;*/
+} 
+.details{
+    color: aliceblue;
+    padding: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width:100%;
+    height:50%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    /* background-color: blueviolet; */
 }
