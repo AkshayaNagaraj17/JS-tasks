@@ -1,4 +1,5 @@
-let movies=[
+let movies=
+[
     {
         name:"Stranger things",
         poster:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyKu0FsmjKVMIisF2ALtMaANdeCJWaNBbnlA&s",
@@ -7,6 +8,7 @@ let movies=[
     {
         name:"Jumanji",
         poster:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXJALX71JwANVw87_6b1RhTwDBQ5tvuJxg4w&s",
+        rating:9.2
     },
     {
         name:"Venom",
@@ -25,10 +27,10 @@ let movies=[
     }
 
 ]
+
 function searchmovie()
 {
     var inp=document.querySelector(".search-box").value;
-
     console.log( inp)
 }
 
@@ -41,30 +43,31 @@ function displayMovie()
     // moviediv.appendChild(overlaydiv)  //letting overlay inside the movie div
     // console.log(moviediv)
 
-
     //another way
 
-    let htmlString=`
-    
-    <div class="movie">
+    let htmlString=``
+
+    for (let i=0;i<movies.length;i++)
+    {
+        htmlString=htmlString+`
+        
+         <div class="movie">
             <div class="overlay">
                  <div class="video">
 
                  </div>
                  <div class="details">
-                    <h1>Stranger things</h1>
-                    <h2>IMDB:8.5</h2>
+                    <h1>${movies[i].name}</h1>
+                    <h2>IMDB:${movies[i].rating}</h2>
                     <p>Eleven . Sid . Demon</p>
                  </div>
             </div>
-            <img class="ST" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyKu0FsmjKVMIisF2ALtMaANdeCJWaNBbnlA&s" alt="ST poster">
+            <img class="ST" src="${movies[i].poster}" alt="ST poster">
         </div>
-    
-    
-    `
-    document.querySelector(".movies").innerHTML=htmlString
-
-
+        `
+    }
+    let dis=document.querySelector(".movies")
+    dis.innerHTML=htmlString
 }
 
 displayMovie()

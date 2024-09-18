@@ -49,9 +49,13 @@
     overflow: hidden;
 }
 .movies{
-    background-color: grey;
+    background-color: grey; 
     width:100%;
     padding:50px;
+    display:flex;
+    flex-wrap: wrap;
+    column-gap: 6%;
+    row-gap: 100px;
 }
 .movie{
     background-color: brown;
