@@ -30,11 +30,27 @@ let movies=
 
 function searchmovie()
 {
-    var inp=document.querySelector(".search-box").value;
-    console.log( inp)
+    let inp=document.querySelector(".search-box").value;
+    
+    if(inp!=="")
+    {
+        let result=movies.filter (function(movie)
+    {
+        return movie.name.toUpperCase().includes(inp.toUpperCase())
+    })
+    if(result.length==0)
+    {
+
+    }
+    
+    displayMovie(result)
+    }
+    else{
+        displayMovie(movies)
+    }
 }
 
-function displayMovie()
+function displayMovie(data)
 {
     // let moviediv=document.createElement("div")
     // moviediv.classList.add("movie")
@@ -44,10 +60,10 @@ function displayMovie()
     // console.log(moviediv)
 
     //another way
-
+    document.querySelector(".movies").innerHTML=""
     let htmlString=``
 
-    for (let i=0;i<movies.length;i++)
+    for (let i=0;i<data.length;i++)
     {
         htmlString=htmlString+`
         
@@ -57,17 +73,17 @@ function displayMovie()
 
                  </div>
                  <div class="details">
-                    <h1>${movies[i].name}</h1>
-                    <h2>IMDB:${movies[i].rating}</h2>
+                    <h1>${data[i].name}</h1>
+                    <h2>IMDB:${data[i].rating}</h2>
                     <p>Eleven . Sid . Demon</p>
                  </div>
             </div>
-            <img class="ST" src="${movies[i].poster}" alt="ST poster">
+            <img class="ST" src="${data[i].poster}" alt="ST poster">
         </div>
         `
     }
-    let dis=document.querySelector(".movies")
-    dis.innerHTML=htmlString
+    console.log(htmlString)
+    document.querySelector(".movies").innerHTML=htmlString
 }
 
-displayMovie()
+displayMovie(movies)
